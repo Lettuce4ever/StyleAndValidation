@@ -76,13 +76,14 @@ namespace StyleAndValidation.ViewModels
         {
            User registered=new () { BirthDate=BirthDate, Email=Email, FullName=FullName, Password=Password, Username=Username};
             #region מסך טעינה
-            //await AppShell.Current.GoToAsync("Loading");
-            //var loading=AppShell.Current.CurrentPage.BindingContext as LoadingPageViewModel;
+            await AppShell.Current.GoToAsync("Loading");
+            var loading = AppShell.Current.CurrentPage.BindingContext as LoadingPageViewModel;
             #endregion
             bool ok = await appServices.RegisterUserAsync(registered);
 
-          #region סגירת מסך טעינה
-                //await loading.Close();
+            #region סגירת מסך טעינה
+            await loading.Close();
+            //await AppShell.Current.Navigation.PopModalAsync();
                 #endregion
            if (ok)
             {
@@ -126,7 +127,11 @@ namespace StyleAndValidation.ViewModels
             return ok;
         }
 
-        
+        //private bool ValidatePassword()
+        //{
+
+        //}
+
 
         private bool ValidateAll()
         {

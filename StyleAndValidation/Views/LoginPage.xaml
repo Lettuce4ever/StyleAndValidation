@@ -14,14 +14,39 @@
     </Shell.BackButtonBehavior>
 
     <VerticalStackLayout HorizontalOptions="CenterAndExpand" VerticalOptions="CenterAndExpand">
+        <VerticalStackLayout.Resources>
+            <ResourceDictionary>
+                <Style x:Key="lblStyle" TargetType="Label">
+                    <Setter Property="TextColor" Value="Black" />
+                    <Setter Property="FontSize" Value="16" />
+                    <Setter Property="Margin" Value="0,10,0,0" />
+                </Style>
+                <Style x:Key="entStyle" TargetType="Entry">
+                    <Setter Property="TextColor" Value="Black" />
+                    <Setter Property="PlaceholderColor" Value="Gray" />
+                    <Setter Property="FontSize" Value="16" />
+                </Style>
+                <Style x:Key="btnStyle" TargetType="Button">
+                    <Setter Property="TextColor" Value="White" />
+                    <Setter Property="BackgroundColor" Value="Teal" />
+                    <Setter Property="CornerRadius" Value="10" />
+                    <Setter Property="Padding" Value="10" />
+                    <Setter Property="FontSize" Value="16" />
+                </Style>
+            </ResourceDictionary>
+        </VerticalStackLayout.Resources>
 
         <!--  User Name  -->
 
-        <Label Text="שם משתמש" />
-        <Entry Text="{Binding Username}" />
+        <Label Style="{StaticResource lblStyle}" Text="שם משתמש" />
+        <Entry Style="{StaticResource entStyle}" Text="{Binding Username}" />
         <!--  Password  -->
-        <Label Text="סיסמה" />
-        <Entry IsPassword="{Binding ShowPassword}" Text="{Binding Password}" />
+        <Label Style="{StaticResource lblStyle}" Text="סיסמה" />
+        <Entry
+            IsPassword="{Binding ShowPassword}"
+            Style="{StaticResource entStyle}"
+            Text="{Binding Password}"
+            ZIndex="1" />
         <Button
             Margin="0,-42,0,0"
             Background="Transparent"
@@ -34,6 +59,7 @@
         <Button
             Command="{Binding LoginCommand}"
             HorizontalOptions="FillAndExpand"
+            Style="{StaticResource btnStyle}"
             Text="התחבר" />
         <HorizontalStackLayout Spacing="200">
             <Button
@@ -41,6 +67,7 @@
                 Command="{Binding RegisterCommand}"
                 FontAttributes="Bold"
                 FontSize="15"
+                Style="{StaticResource btnStyle}"
                 Text="הרשמה"
                 TextColor="black"
                 VerticalOptions="Center" />
@@ -48,6 +75,7 @@
                 Background="Transparent"
                 Command="{Binding ForgotPasswordCommand}"
                 HorizontalOptions="End"
+                Style="{StaticResource btnStyle}"
                 Text="שכחתי סיסמה"
                 TextColor="Black"
                 VerticalOptions="End" />

@@ -3,7 +3,9 @@
     x:Class="StyleAndValidation.Views.MyPage"
     xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-    Title="דף הבית">
+    Title="דף הבית"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.FlyoutItemIsVisible="True">
     <VerticalStackLayout
         Margin="15"
         Background="LightCoral"

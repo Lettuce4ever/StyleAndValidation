@@ -12,6 +12,8 @@
                 <ResourceDictionary>
                     <Style x:Key="ErrorStyle" TargetType="Label">
                         <Setter Property="TextColor" Value="Red" />
+                        <Setter Property="FontSize" Value="15" />
+                        <Setter Property="HorizontalOptions" Value="Center" />
                     </Style>
                 </ResourceDictionary>
             </ResourceDictionary.MergedDictionaries>
